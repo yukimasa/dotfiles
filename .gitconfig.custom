@@ -1,0 +1,34 @@
+[init]
+  defaultBranch = main
+[core]
+  repositoryformatversion = 0
+  filemode = true
+  bare = false
+  logallrefupdates = true
+  ignorecase = false
+  precomposeunicode = false
+  autocrlf = false
+  quotepath = false
+  editor = vim
+  autocrlf = input
+[merge]
+  ff = false
+[push]
+  default = current
+[pull]
+  ff = only
+[alias]
+  st = status
+  sts = status -sb
+  co = checkout
+  br = branch
+  cm = commit
+  df = diff
+  lg = log --oneline --graph -10
+  lgb = log --oneline --graph --branches -15
+  lgr= log --oneline --graph --remotes -15
+  ss = stash
+  sw = switch
+  ft = fetch -p --all
+[color]
+  ui = auto
