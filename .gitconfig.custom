@@ -32,3 +32,6 @@
   ft = fetch -p --all
 [color]
   ui = auto
+[commit]
+	template = ~/.gitmessage.txt
+
