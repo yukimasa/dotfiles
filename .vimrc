@@ -192,3 +192,15 @@ set scrolloff=5 " スクロールする時に下が見えるようにする
 inoremap jj <esc>
 
 set clipboard+=unnamed
+
+" emacsのコマンド設定
+inoremap <C-a> <HOME>
+inoremap <C-e> <END>
+inoremap <C-h> <BS>
+inoremap <C-d> <Del>
+inoremap <C-n> <DOWN>
+inoremap <C-p> <UP>
+inoremap <C-f> <RIGHT>
+inoremap <C-b> <LEFT>
+inoremap <C-k> <C-o><S-d>
+
