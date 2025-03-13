@@ -1,5 +1,7 @@
 [init]
   defaultBranch = main
+[user]
+  useConfigOnly = true
 [core]
   repositoryformatversion = 0
   filemode = true
@@ -7,14 +9,11 @@
   logallrefupdates = true
   ignorecase = false
   precomposeunicode = false
-  autocrlf = false
   quotepath = false
   editor = vim
   autocrlf = input
 [merge]
   ff = false
-[push]
-  default = current
 [pull]
   ff = only
 [alias]
@@ -25,13 +24,16 @@
   cm = commit
   df = diff
   lg = log --oneline --graph -10
+  lga = log --oneline --graph --branches --remotes -30 --all
   lgb = log --oneline --graph --branches -15
   lgr= log --oneline --graph --remotes -15
   ss = stash
   sw = switch
+  res = restore
+  reb = rebase
   ft = fetch -p --all
 [color]
   ui = auto
 [commit]
-	template = ~/.gitmessage.txt
+  template = ~/.gitmessage.txt
 
