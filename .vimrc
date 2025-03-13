@@ -7,7 +7,7 @@ scriptencoding utf-8 " vim script内でマルチバイトを使用する場合�
 "colorscheme desert
 "set background=dark
 syntax on
-colorscheme molokai
+" colorscheme molokai
 set t_Co=256
 
 "----------------------------------------------------------
@@ -111,33 +111,22 @@ source $VIMRUNTIME/macros/matchit.vim " Vimの「%」を拡張する
 "----------------------------------------------------------
 " マウスでカーソル移動とスクロール
 "----------------------------------------------------------
-if has('mouse')
-    set mouse=a
-    if has('mouse_sgr')
-        set ttymouse=sgr
-    elseif v:version > 703 || v:version is 703 && has('patch632')
-        set ttymouse=sgr
-    else
-        set ttymouse=xterm2
-    endif
-endif
+" if has('mouse')
+"     set mouse=a
+"     if has('mouse_sgr')
+"         set ttymouse=sgr
+"     elseif v:version > 703 || v:version is 703 && has('patch632')
+"         set ttymouse=sgr
+"     else
+"         set ttymouse=xterm2
+"     endif
+" endif
 
 "----------------------------------------------------------
 " クリップボードからのペースト
 "----------------------------------------------------------
 " 挿入モードでクリップボードからペーストする時に自動でインデントさせないようにする
-if &term =~ "xterm"
-    let &t_SI .= "\e[?2004h"
-    let &t_EI .= "\e[?2004l"
-    let &pastetoggle = "\e[201~"
-
-    function XTermPasteBegin(ret)
-        set paste
-        return a:ret
-    endfunction
-
-    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
-endif
+set clipboard+=unnamedplus
 
 "----------------------------------------------------------
 " Syntastic
@@ -203,4 +192,5 @@ inoremap <C-p> <UP>
 inoremap <C-f> <RIGHT>
 inoremap <C-b> <LEFT>
 inoremap <C-k> <C-o><S-d>
+vnoremap , <esc>ggVG
 
